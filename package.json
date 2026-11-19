@@ -1,0 +1,29 @@
+{
+  "name": "webgl2-meteo-engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "High-performance WebGL2 meteorological rendering engine (wind particles, WMO SDF wind barbs, atmospheric scattering) built on MapLibre GL JS.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "validate:shaders": "node tests/validate-shaders.mjs",
+    "test:visual": "playwright test tests/visual",
+    "verify:all": "npm run typecheck && npm run validate:shaders && npm run test:visual"
+  },
+  "dependencies": {
+    "gl-matrix": "^3.4.3",
+    "maplibre-gl": "^4.7.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.9.0",
+    "@types/pngjs": "^6.0.5",
+    "pixelmatch": "^6.0.0",
+    "pngjs": "^7.0.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vite-plugin-glsl": "^1.3.1"
+  }
+}
